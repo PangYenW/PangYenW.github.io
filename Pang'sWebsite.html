@@ -1,6 +1,11 @@
 <!DOCTYPE html> 
  <!-- declaration defines this document to bo HTML5 -->
-<html>
+
+<!-- The lang Attribute -->
+<!-- Declaring a language is important for accessibility applications -->
+<!-- (screen readers) and search engines -->
+
+<html lang="en-us">
 <!-- element is the root element of an HTML page -->
 <head>
 	<!-- element contains meta information about the document -->
@@ -9,13 +14,15 @@
 <body>
 	<h1>My First Heading</h1>
 	<!-- <h1> defines the most important heading. <h6> defines the least important heading  -->
-	<p>My first paragraph</p>
+		<!-- style attribute is used to specify the styling of an element, like color -->
+	<p style="color:blue">My first paragraph</p>
 
 	<!-- HTML Links -->
+	<!-- href attributes -->
 	<a href="https://www.youtube.com/channel/UC3zcS3aoE9ZDmzH7AIbRQ9A?view_as=subscriber">My Basketball Youtube channel</a>
 
 	<!-- HTML Images -->
-	<img src="http://www.ubbulls.com/sports/wbkb/2018-19/MAC_East_Favorites.jpg?max_width=690" >
+	<img src="http://www.ubbulls.com/sports/wbkb/2018-19/MAC_East_Favorites.jpg?max_width=690" alt = "UbWomensBasketballTeam" >
 	<!-- HTML button -->
 	<button>Ay Stop that</button>
 
@@ -34,6 +41,15 @@
 		<li>Curry</li>
 		<li>Kobe</li>
 	</ol>
+
+	<!-- HTML elements with no content are called empty elements. Empty elements do not have an end tag -->
+	<br>
+
+	<!-- HTML Attributes, are always specified in the start tag, usually come in name/value pairs like: name = "value" -->
+	<!-- title attribute -->
+	<!-- The value of the title attribute will be displayed as a tooltip when  -->
+	<!-- you mouse over the paragraph -->
+	<p title="It's in Asia">Hi I am from Taiwan</p>
 
 </body>
 </html>
