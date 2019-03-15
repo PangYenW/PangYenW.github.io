@@ -51,5 +51,29 @@ var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDix9MoQ9rSna9mc6GCPYLt6xqDHZxC0TA&callback=myMap"></script>
 
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  var latlon = position.coords.latitude + "," + position.coords.longitude;
+
+  var img_url = "https://maps.googleapis.com/maps/api/staticmap?center=
+  "+latlon+"&zoom=14&size=400x300&sensor=false&key=YOUR_:KEY";
+
+  document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
+}
+</script>
     </body>
 </html>
