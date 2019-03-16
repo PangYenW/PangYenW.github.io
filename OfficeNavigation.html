@@ -47,9 +47,10 @@ var mapProp= {
 };
 var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 <!-- add a marker-->
-  var marker = new google.maps.Marker({position:myCenter, animation:google.maps.Animation.BOUNCE
+  var marker = new google.maps.Marker({position:myCenter
 
-}
+});
+marker.setMap(map);
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDix9MoQ9rSna9mc6GCPYLt6xqDHZxC0TA&callback=myMap"></script>
