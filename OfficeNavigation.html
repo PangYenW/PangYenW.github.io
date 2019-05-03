@@ -86,6 +86,32 @@
 				directionsDisplay.setPanel(document.getElementById('right-panel'));
 				var control = document.getElementById('floating-panel');
 			  control.style.display = 'inline-block';
+		      
+		      
+		       var onChangeHandler = function() {
+          calculateAndDisplayRoute(directionsService, directionsDisplay);
+        };
+        document.getElementById('start').addEventListener('change', onChangeHandler);
+        document.getElementById('end').addEventListener('change', onChangeHandler);
+        calculateAndDisplayRoute(directionsService, directionsDisplay);
+                document.getElementById('mode').addEventListener('change', function() {
+                  calculateAndDisplayRoute(directionsService, directionsDisplay);
+                });
+      }
+      function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+        var selectedMode = document.getElementById('mode').value;
+        directionsService.route({
+          origin: document.getElementById('start').value,
+          destination: document.getElementById('end').value,
+          travelMode: google.maps.TravelMode[selectedMode]
+        }, function(response, status) {
+          if (status === 'OK') {
+            directionsDisplay.setDirections(response);
+          } else {
+            window.alert('Directions request failed due to ' + status);
+          }
+        });
+      }
 
 	        // Try HTML5 geolocation.
 	        if (navigator.geolocation) {
