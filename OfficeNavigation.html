@@ -117,7 +117,7 @@
       function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         var selectedMode = document.getElementById('mode').value;
         directionsService.route({
-          origin: document.getElementById('start').value,
+          origin:pos,
           destination: document.getElementById('end').value,
           travelMode: google.maps.TravelMode[selectedMode]
         }, function(response, status) {
