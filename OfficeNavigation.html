@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -99,13 +100,13 @@
 	            };
 
 	            infoWindow.setPosition(pos);
-	            infoWindow.setContent('Location found.');
+	            infoWindow.setContent('You Are Here!.');
 	            infoWindow.open(map);
 	            map.setCenter(pos);
 	          }, function() {
 	            handleLocationError(true, infoWindow, map.getCenter());
 	          });
-	        } 
+	        }
 
 				 directionsDisplay.setMap(map);
 		 directionsDisplay.setPanel(document.getElementById('right-panel'));
@@ -124,20 +125,7 @@
 						 });
 	 }
 			// Try HTML5 geolocation.
-			 if (navigator.geolocation) {
-				 navigator.geolocation.getCurrentPosition(function(position) {
-					 var pos = {
-						 lat: position.coords.latitude,
-						 lng: position.coords.longitude
-					 };
-					 infoWindow.setPosition(pos);
-					 infoWindow.setContent('Location found.');
-					 infoWindow.open(map);
-					 map.setCenter(pos);
-				 }, function() {
-					 handleLocationError(true, infoWindow, map.getCenter());
-				 });
-			 }
+
 	 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 		 var selectedMode = document.getElementById('mode').value;
 		 directionsService.route({
